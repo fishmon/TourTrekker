@@ -1,4 +1,6 @@
 import React from 'react';
+import BottomButtons from './BottomButtons';
+
 
 const Forecast = () => {
   return (
@@ -59,6 +61,7 @@ const Forecast = () => {
         </section>
       </div>
     </div>
+    <BottomButtons />
   </div>
   );
 };
