@@ -10,7 +10,7 @@ const AppRoutes = ({ city }) => { // Component to manage routing
         <Router>
             <Routes>
                 {/* Route for landing page */}
-                <Route path="/" element={<LandingPage />} />
+                <Route path="/" element={<LandingPage city={city} />} />
 
                 {/* Route for info page */}
                 <Route path="/info" element={<Info />} />
