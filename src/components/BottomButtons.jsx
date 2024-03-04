@@ -1,19 +1,24 @@
 import React from 'react';
+import '../buttons.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBookAtlas, faCloudSunRain, faMapLocationDot } from '@fortawesome/free-solid-svg-icons'
 
 const BottomButtons = () => {
   return (
     <div className="fixed-bottom bg-light p-3">
       <div className="container">
         <div className="row">
-          <div className="col">
-            <Link to="/info" className="btn btn-primary btn-block rounded-pill">Info</Link>
+
+          <div className="col-md-4 col-sm-12 bottom-btns">
+            <Link to="/info" className="btn btn-bottom btn-block"><FontAwesomeIcon icon={faBookAtlas} /> Info</Link>
           </div>
-          <div className="col">
-            <Link to="/forecast" className="btn btn-secondary btn-block rounded-pill">Weather</Link>
+          <div className="col-md-4 col-sm-12 bottom-btns">
+            <Link to="/forecast" className="btn btn-bottom btn-block"><FontAwesomeIcon icon={faCloudSunRain} /> Weather</Link>
           </div>
-          <div className="col">
-            <Link to="/places" className="btn btn-success btn-block rounded-pill"> Touristic places</Link>
+          <div className="col-md-4 col-sm-12 bottom-btns">
+            <Link to="/places" className="btn btn-bottom btn-block"><FontAwesomeIcon icon={faMapLocationDot} /> Touristic places</Link>
           </div>
          
         </div>

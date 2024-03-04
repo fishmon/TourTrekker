@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import logo from '../assets/logo.svg';
 
 const Header = ({ onSearch }) => {
   // State variable to manage the input value
@@ -25,12 +26,12 @@ const Header = ({ onSearch }) => {
   };
 
   return (
-    <header className="p-4 border border-black">
+    <header className="p-2">
       <div className="container-fluid">
         <div className="row align-items-center">
           {/* Logo */}
           <div className="col-2 text-center">
-            <img src="#" alt="Logo" className="mr-3" />
+            <img src={logo} alt="Logo" className="mr-3" />
           </div>
           {/* Search input */}
           <div className="col text-center">
@@ -45,7 +46,7 @@ const Header = ({ onSearch }) => {
           </div>
           {/* Search button */}
           <div className="col text-center">
-            <button className="btn btn-primary" onClick={handleSearch}>Search</button>
+            <button className="btn btn-search" onClick={handleSearch}>Search</button>
           </div>
         </div>
       </div>
