@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import BottomButtons from './BottomButtons';
 
 function Forecast({ city }) {
   // State variables to store search history, current weather, and forecast weather
@@ -121,6 +122,7 @@ function Forecast({ city }) {
           ))
         )}
       </div>
+      <BottomButtons/>
     </div>
   );
 }

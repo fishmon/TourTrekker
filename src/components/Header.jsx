@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './Header.css';
 const Header = ({ onSearch }) => {
   // State variable to manage the input value
   const [city, setCity] = useState('');
@@ -25,31 +25,19 @@ const Header = ({ onSearch }) => {
   };
 
   return (
-    <header className="p-4 border border-black">
-      <div className="container-fluid">
-        <div className="row align-items-center">
-          {/* Logo */}
-          <div className="col-2 text-center">
-            <img src="#" alt="Logo" className="mr-3" />
-          </div>
-          {/* Search input */}
-          <div className="col text-center">
-            <input
-              type="text"
-              placeholder="Search..."
-              className="form-control mx-auto w-50"
-              value={city}
+      <nav className="navbar navbar-expand-lg position-fixed w-100 top-0 z-1">
+  <div className="container-fluid">
+    <a className="navbar-brand " href="#">TourTrekker</a>
+    <div className="collapse navbar-collapse justify-content-center me-5" id="navbarSupportedContent">
+    <div className="d-flex">
+        <input className="form-control me-2 " type="text" placeholder="Search" aria-label="Search"value={city}
               onChange={(e) => setCity(e.target.value)}
-              onKeyPress={handleKeyPress} // Added event listener for key press
-            />
-          </div>
-          {/* Search button */}
-          <div className="col text-center">
-            <button className="btn btn-primary" onClick={handleSearch}>Search</button>
-          </div>
-        </div>
+              onKeyPress={handleKeyPress}/>
+        <button className="btn search-button" onClick={handleSearch}>Search</button>
       </div>
-    </header>
+    </div>
+  </div>
+</nav>
   );
 };
 
