@@ -1,19 +1,20 @@
 import React from 'react';
 import ForecastLogic from './ForecastLogic';
 import BottomButtons from './BottomButtons';
-
+import Header from './Header';
 
 function Forecast({ city }) {
   const { currentWeather, forecastWeather, formatDate } = ForecastLogic({ city });
 
   return (
     <div className="weather-app">
-  
-      {/* Current weather card */}
+         <Header onSearch={handleSearch} />
+
+     
       <div className="row">
-        <div className="col-md-12 mb-3"> {/* Full width for the current weather card */}
+        <div className="col-md-12 mb-3"> 
           {currentWeather && (
-            <div className="card glass"> {/* Apply glass effect */}
+            <div className="card glass">
               <div className="card-body">
                 <h5 className="card-title">{currentWeather.name}</h5>
                 <p className="card-text">Temperature: {currentWeather.main.temp} °C</p>
@@ -26,12 +27,11 @@ function Forecast({ city }) {
         </div>
       </div>
 
-      {/* Forecast cards */}
       <div className="row">
         {forecastWeather.length > 0 && (
           forecastWeather.map((entry, index) => (
-            <div className="col-md-2 mb-3" key={index}> {/* Set column width to 2 (15% of 12-column grid) */}
-              <div className="card glass"> {/* Apply glass effect */}
+            <div className="col-md-2 mb-3" key={index}> 
+              <div className="card glass"> 
                 <div className="card-body">
                   <h5 className="card-title">Date: {formatDate(entry.dt)}</h5>
                   <p className="card-text">Temperature: {entry.main.temp} °C</p>
