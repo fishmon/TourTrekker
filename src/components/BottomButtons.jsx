@@ -15,7 +15,6 @@ const BottomButtons = () => {
           <div className="col">
             <Link to="/places" className="btn btn-success btn-block rounded-pill"> Touristic places</Link>
           </div>
-         
         </div>
       </div>
     </div>
