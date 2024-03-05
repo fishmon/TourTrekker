@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import axios from "axios";
+import './landingPage.css';
 
 const LandingPage = ({ city }) => {
   const [imageUrl, setImageUrl] = useState("");
@@ -35,8 +36,17 @@ const LandingPage = ({ city }) => {
 
   return (
     <div className="landing-page">
-      <h1>welcome</h1>
-      {imageUrl && <img src={imageUrl} alt="Random" />}
+      <div className="container position-absolute text-black welcome-box rounded">
+      <h2 className="bg fs-1">Welcome!</h2>
+      <p>Embark on a journey of exploration and discovery with TourTrekker – your gateway to discovering the world's wonders. 
+<br/><b> Start</b> your journey today <b>by typing in a city name</b> and uncovering a world of possibilities. <br/>Happy exploring!</p>
+<div className="d-flex search-input">
+        <input className="form-control me-2 " type="text" placeholder="Search" aria-label="Search"value={city}
+              />
+        <button className="btn search-button" >Search</button>
+      </div>
+    </div>
+      {/* {imageUrl && <img src={imageUrl} alt="Random" className="img-fluid"/>} */}
     </div>
   );
 };

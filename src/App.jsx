@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Header from './components/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AppRoutes from "./Routes";
 import './App.css'
+import Footer from './components/Footer';
 import BottomButtons from './components/BottomButtons';
+import LandingPage from './components/landingPage';
 
 function App() {
   const [city, setCity] = useState('');
@@ -14,9 +16,13 @@ function App() {
   };
 
   return (
-    <div className='container-fluid'>
+    <div className="App">
+    
       <Header onSearch={handleSearch} />
+      {/* <LandingPage city={city}/> */}
       <AppRoutes city={city} />
+      <Footer/>
+    
     </div>
   );
 }
