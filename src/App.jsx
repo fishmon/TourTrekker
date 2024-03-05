@@ -16,10 +16,11 @@ function App() {
 
   return (
     <div className="App">
-     
+    
+      <Header onSearch={handleSearch} />
       <AppRoutes city={city} />
       <Footer/>
-      
+    
     </div>
   );
 }

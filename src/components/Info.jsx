@@ -1,10 +1,10 @@
-import React from "react";
-import BottomButtons from "./BottomButtons";
-import Header from "./Header";
+import React from 'react';
+import BottomButtons from './BottomButtons';
+
 const Info = () => {
   return (
     <div>
-      <Header />
+      <h1></h1>
       <BottomButtons />
     </div>
   );
