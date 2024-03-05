@@ -1,6 +1,6 @@
 import  { useState, useEffect } from "react";
 import axios from "axios";
-import './landingPage.css';
+ import './landingPage.css';
 
 const LandingPage = ({ city }) => {
   const [imageUrl, setImageUrl] = useState("");

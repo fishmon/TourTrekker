@@ -1,15 +1,18 @@
-.navbar{
-    background-color: rgba(121, 85, 68, 0.9);
-    /* min-height: 7em; */
+.navbar {
+  background-color: rgba(121, 85, 68, 0.9);
+  /* min-height: 7em; */
 }
-.form-control{
-    min-width: 30em;
-    min-height: 3em;
+
+.form-control {
+  min-width: 30em;
+  min-height: 3em;
 }
-.search-button{
-    background-color: #E7BFA4!important;
-    min-width: 7em!important;
+
+.search-button {
+  background-color: #E7BFA4 !important;
+  min-width: 7em !important;
 }
-.navbar-brand{
-    font-size: 2rem!important;
-}
+
+.navbar-brand {
+  font-size: 2rem !important;
+}/*# sourceMappingURL=Header.css.map */
