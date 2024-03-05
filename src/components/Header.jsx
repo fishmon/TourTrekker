@@ -25,7 +25,7 @@ const Header = ({ onSearch }) => {
   };
 
   return (
-      <nav className="navbar navbar-expand-lg position-fixed w-100 top-0 z-1">
+      <nav className="navbar navbar-expand-lg w-100 top-0 z-1">
   <div className="container-fluid">
     <a className="navbar-brand " href="#">TourTrekker</a>
     <div className="collapse navbar-collapse justify-content-center me-5" id="navbarSupportedContent">
