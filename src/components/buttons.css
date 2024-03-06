@@ -5,15 +5,15 @@
     border: none;
     border-radius: 5px;
     font-size: 1.5em;
-    color: black;
-    background: rgb(255, 208, 0);
+    color: white;
+    background: rgb(255, 0, 0);
     transition: box-shadow 0.4s ease;
   }
   .btn-bottom:hover {
-    background: rgb(255, 208, 0);
-    box-shadow: 5px 5px black;
+    background: rgb(255, 0, 0);
+    box-shadow: 5px 5px rgb(255, 208, 0);
     cursor: pointer;
-    color: black;
+    color: white;
   }
   
   .bottom-btns {
