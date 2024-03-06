@@ -63,4 +63,3 @@ function ForecastLogic({ city }) {
 }
 
 export default ForecastLogic;
-

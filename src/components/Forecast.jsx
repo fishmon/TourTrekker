@@ -2,10 +2,12 @@ import React from 'react';
 import ForecastLogic from './ForecastLogic';
 import BottomButtons from './BottomButtons';
 
-function formatDate(date) {
+function formatDate(timestamp) {
+  const date = new Date(timestamp * 1000); // Convert from Unix timestamp to milliseconds
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-  return new Date(date).toLocaleDateString('en-US', options);
+  return date.toLocaleDateString('en-US', options);
 }
+
 
 function Forecast({ city }) {
   const { currentWeather, forecastWeather, backgroundImageUrl } = ForecastLogic({ city });
