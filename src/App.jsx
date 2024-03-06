@@ -5,6 +5,7 @@ import AppRoutes from "./Routes";
 import './App.css'
 import Footer from './components/Footer';
 
+
 function App() {
   const [city, setCity] = useState('');
 
@@ -15,7 +16,7 @@ function App() {
 
   return (
     <div className="App">
-      
+    
       <Header onSearch={handleSearch} />
       <AppRoutes city={city} />
       <Footer/>

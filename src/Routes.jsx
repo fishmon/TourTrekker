@@ -4,12 +4,10 @@ import Forecast from "./components/Forecast";
 import Info from "./components/Info";
 import Places from "./components/Places";
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
-import Header from './components/Header'
 
 const AppRoutes = ({ city }) => { // Component to manage routing
     return (
-     
-        <Router>   
+        <Router>
             <Routes>
                 {/* Route for landing page */}
                 <Route path="/" element={<LandingPage city={city} />} />
