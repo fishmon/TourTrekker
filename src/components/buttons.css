@@ -1,4 +1,5 @@
 .btn-bottom {
+<<<<<<< HEAD
   width: 80%;
   margin: 14px auto;
   padding: 10px;
@@ -30,3 +31,36 @@
   box-shadow: 5px 5px black;
   cursor: pointer;
 }/*# sourceMappingURL=buttons.css.map */
+=======
+    width: 80%;
+    margin: 14px auto;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5em;
+    color: white;
+    background: rgb(255, 0, 0);
+    transition: box-shadow 0.4s ease;
+  }
+  .btn-bottom:hover {
+    background: rgb(255, 0, 0);
+    box-shadow: 5px 5px rgb(255, 208, 0);
+    cursor: pointer;
+    color: white;
+  }
+  
+  .bottom-btns {
+    display: flex;
+    justify-items: center;
+  }
+  
+  .btn-search {
+    background: rgb(255, 208, 0);
+    color: black;
+  }
+  .btn-search:hover {
+    background: rgb(255, 208, 0);
+    box-shadow: 5px 5px black;
+    cursor: pointer;
+  }/*# sourceMappingURL=buttons.css.map */
+>>>>>>> ebc2353958ac0d48cb0a77d5b780c36dcec2eb9e
