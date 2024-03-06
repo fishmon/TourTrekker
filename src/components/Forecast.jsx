@@ -8,7 +8,6 @@ function formatDate(timestamp) {
   return date.toLocaleDateString('en-US', options);
 }
 
-
 function Forecast({ city }) {
   const { currentWeather, forecastWeather, backgroundImageUrl } = ForecastLogic({ city });
 
@@ -26,6 +25,12 @@ function Forecast({ city }) {
     display: 'flex',
     flexDirection: 'column',
     minHeight: '100vh',
+    margin: '0 auto',
+  };
+
+  const cardStyle = {
+    background: 'white',
+    opacity: '0.94',
   };
 
   return (
@@ -33,10 +38,10 @@ function Forecast({ city }) {
       {/* Background with background image */}
       <div style={backgroundStyle}>
         {/* Current weather card */}
-        <div className="row">
-          <div className="col-md-12 mb-3">
+        <div className="row justify-content-center">
+          <div className="col-md-10 mb-3 mt-4">
             {currentWeather && (
-              <div className="card glass">
+              <div className="card glass" style={cardStyle}>
                 <div className="card-body">
                   <h5 className="card-title">{currentWeather.name}</h5>
                   <p className="card-text">Temperature: {currentWeather.main.temp} °C</p>
@@ -50,11 +55,11 @@ function Forecast({ city }) {
         </div>
 
         {/* Forecast cards */}
-        <div className="row">
+        <div className="row justify-content-center">
           {forecastWeather.length > 0 && (
             forecastWeather.map((entry, index) => (
               <div className="col-md-2 mb-3" key={index}>
-                <div className="card glass">
+                <div className="card glass" style={cardStyle}>
                   <div className="card-body">
                     <h5 className="card-title">Date: {formatDate(entry.dt)}</h5>
                     <p className="card-text">Temperature: {entry.main.temp} °C</p>
