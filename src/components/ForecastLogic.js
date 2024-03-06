@@ -1,23 +1,24 @@
 import React, { useState, useEffect } from 'react';
 
-
 function ForecastLogic({ city }) {
-  // State variables to store search history, current weather, and forecast weather
+  // State variables to store current weather, forecast weather, and background image URL
   const [currentWeather, setCurrentWeather] = useState(null);
   const [forecastWeather, setForecastWeather] = useState([]);
+  const [backgroundImageUrl, setBackgroundImageUrl] = useState(null);
 
-  // useEffect hook to fetch weather data when the city changes
+  // useEffect hook to fetch weather data and background image when the city changes
   useEffect(() => {
     if (city) {
       getWeatherData(city);
+      fetchBackgroundImage(city);
     }
   }, [city]);
 
-  // Function to fetch weather data for a given city
+  // Function to fetch weather data for a given city from OpenWeatherMap API
   const getWeatherData = async (city) => {
-    const apiKey = 'b0bd9b4eb2c0ab32b7e8bb3f59b60b76';
-    const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+    const openWeatherMapApiKey = 'b0bd9b4eb2c0ab32b7e8bb3f59b60b76'; // OpenWeatherMap API key
+    const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${openWeatherMapApiKey}&units=metric`;
+    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${openWeatherMapApiKey}&units=metric`;
 
     try {
       // Fetch current weather data
@@ -27,12 +28,6 @@ function ForecastLogic({ city }) {
       // Fetch forecast data
       const forecastResponse = await fetch(forecastUrl);
       const forecastData = await forecastResponse.json();
-
-      // Check for city not found error
-      if (currentData.cod === '404' || forecastData.cod === '404') {
-        alert('City not found. Please try again.');
-        return;
-      }
 
       // Update current weather state
       setCurrentWeather(currentData);
@@ -44,24 +39,27 @@ function ForecastLogic({ city }) {
 
       // Update forecast weather state
       setForecastWeather(filteredForecast);
-
     } catch (error) {
       console.error('Error fetching weather data:', error);
     }
   };
 
+  // Function to fetch background image from Unsplash API
+  const fetchBackgroundImage = async (query) => {
+    const unsplashApiKey = 'fLMtdfoAfkrFdsN3nmAra8NmQkOTRuguv6uikh0Ktfw'; // Unsplash API key
+    const unsplashUrl = `https://api.unsplash.com/photos/random?query=${query}&client_id=${unsplashApiKey}`;
 
-
-  // Function to format date in MM/DD/YYYY format
-  const formatDate = (timestamp) => {
-    const date = new Date(timestamp * 1000);
-    const month = date.getMonth() + 1;
-    const day = date.getDate();
-    const year = date.getFullYear();
-    return `${month}/${day}/${year}`;
+    try {
+      const response = await fetch(unsplashUrl);
+      const data = await response.json();
+      console.log('Unsplash data:', data);
+      setBackgroundImageUrl(data.urls.regular);
+    } catch (error) {
+      console.error('Error fetching image from Unsplash:', error);
+    }
   };
 
-  return {  currentWeather, forecastWeather, getWeatherData, formatDate };
+  return { currentWeather, forecastWeather, backgroundImageUrl };
 }
 
 export default ForecastLogic;
