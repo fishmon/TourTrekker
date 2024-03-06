@@ -8,7 +8,7 @@ function Forecast({ city }) {
 
   return (
     <div className="weather-app">
-  
+   
       {/* Current weather card */}
       <div className="row">
         <div className="col-md-12 mb-3"> {/* Full width for the current weather card */}
