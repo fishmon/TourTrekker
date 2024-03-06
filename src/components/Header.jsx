@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
-import logo from '/assets/logo.svg';
+import React, { useState } from "react";
+import logo from "/assets/logo.svg";
 const Header = ({ onSearch }) => {
   // State variable to manage the input value
-  const [city, setCity] = useState('');
+  const [city, setCity] = useState("");
   // Function to handle search button click
   const handleSearch = () => {
     // Check if the input value is not empty
-    if (city.trim() !== '') {
+    if (city.trim() !== "") {
       // Call the onSearch function with the city value
       onSearch(city);
       // Clear the input value after search
-      setCity('');
+      setCity("");
     }
   };
   // Function to handle key press event
   const handleKeyPress = (e) => {
     // Check if the key pressed is Enter
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       // Call the handleSearch function
       handleSearch();
     }
@@ -42,7 +42,9 @@ const Header = ({ onSearch }) => {
           </div>
           {/* Search button */}
           <div className="col text-center">
-            <button className="btn btn-search" onClick={handleSearch}>Search</button>
+            <button className="btn btn-search" onClick={handleSearch}>
+              Search
+            </button>
           </div>
         </div>
       </div>
@@ -50,13 +52,3 @@ const Header = ({ onSearch }) => {
   );
 };
 export default Header;
-
-
-
-
-
-
-
-
-
-
