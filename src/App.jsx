@@ -19,7 +19,7 @@ function App() {
     
       <Header onSearch={handleSearch} />
       <AppRoutes city={city} />
-      <Footer/>
+      <Footer />
     
     </div>
   );

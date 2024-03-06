@@ -11,6 +11,11 @@ function formatDate(timestamp) {
 
 
 function Forecast({ city }) {
+  const { currentWeather, forecastWeather, backgroundImageUrl } = ForecastLogic({ city });
+
+
+
+function Forecast({ city }) {
   const { currentWeather, forecastWeather, formatDate } = ForecastLogic({ city });
 
   return (
