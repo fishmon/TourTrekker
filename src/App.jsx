@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import Header from './components/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AppRoutes from "./Routes";
 import './App.css'
 import Footer from './components/Footer';
-
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   const [city, setCity] = useState('');
@@ -16,14 +15,14 @@ function App() {
 
   return (
     <div className="App overflow-hidden">
-    
-      <Header onSearch={handleSearch} />
-      <AppRoutes city={city} />
+      <Router>
+        <AppRoutes city={city} onSearch={handleSearch} />
+      </Router>
       <Footer />
-    
     </div>
   );
 }
 
 export default App;
+
 
