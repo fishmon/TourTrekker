@@ -1,16 +1,19 @@
+// Forecast.js
 import React from 'react';
 import ForecastLogic from './ForecastLogic';
 import BottomButtons from './BottomButtons';
-import './Forecast.scss';
-
-function formatDate(timestamp) {
-  const date = new Date(timestamp * 1000); // Convert from Unix timestamp to milliseconds
-  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-  return date.toLocaleDateString('en-US', options);
-}
 
 function Forecast({ city }) {
-  const { currentWeather, forecastWeather, getWeatherData, formatDate } = ForecastLogic({ city });
+  const { currentWeather, forecastWeather, getWeatherData, formatDate, backgroundImageUrl } = ForecastLogic({ city });
+
+  const weatherContainerStyle = {
+    backgroundImage: `url(${backgroundImageUrl})`, // Apply the background image dynamically
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    minHeight: '100vh', // Adjust as needed
+    padding: '20px', // Adjust as needed
+  };
 
   return (
     <div className="weather-app overflow-hidden">
