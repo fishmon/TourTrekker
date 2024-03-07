@@ -8,11 +8,11 @@ const LandingPage = () => {
   // Function to handle navigation to the info page
   const handleNavigateToInfo = () => {
     // Navigate to the info page when the user clicks a button
-    navigate('/info');
+    navigate('/home');
   };
 
   return (
-    <div className="landing-page">
+    <div className="landing-page d-flex justify-content-center">
       <div className="container position-absolute text-black welcome-box rounded">
         <h2 className="bg fs-1">Welcome!</h2>
         <p>Embark on a journey of exploration and discovery with TourTrekker – your gateway to discovering the world's wonders. 

@@ -2,7 +2,6 @@ import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AppRoutes from "./Routes";
 import './App.css'
-import Footer from './components/Footer';
 import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
@@ -18,7 +17,7 @@ function App() {
       <Router>
         <AppRoutes city={city} onSearch={handleSearch} />
       </Router>
-      <Footer />
+      
     </div>
   );
 }
