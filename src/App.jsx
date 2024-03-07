@@ -15,7 +15,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="App overflow-hidden">
     
       <Header onSearch={handleSearch} />
       <AppRoutes city={city} />

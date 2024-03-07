@@ -2,6 +2,7 @@
 import React from 'react';
 import ForecastLogic from './ForecastLogic';
 import BottomButtons from './BottomButtons';
+import './Forecast.css'
 
 function Forecast({ city }) {
   const { currentWeather, forecastWeather, getWeatherData, formatDate, backgroundImageUrl } = ForecastLogic({ city });
@@ -12,11 +13,10 @@ function Forecast({ city }) {
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
     minHeight: '100vh', // Adjust as needed
-    padding: '20px', // Adjust as needed
   };
 
   return (
-    <div className="weather-app overflow-hidden">
+    <div className="weather-app overflow-hidden no-scroll" style={weatherContainerStyle}>
   
       {/* Current weather card */}
       <div className="row mt-5">
@@ -45,7 +45,7 @@ function Forecast({ city }) {
             <div className="col-md-2 mb-3" key={index}> {/* Set column width to 2 (15% of 12-column grid) */}
               <div className="card"> {/* Apply glass effect */}
                 <div className="card-body">
-                  <h5 className="card-title text-center">{formatDate(entry.dt)}</h5>
+                  <h5 className="card-title text-center"><b>{formatDate(entry.dt)}</b></h5>
                   <p className="card-text">Temperature: {entry.main.temp} °C</p>
                   <p className="card-text">Humidity: {entry.main.humidity}%</p>
                   <p className="card-text">Wind Speed: {entry.wind.speed} m/s</p>

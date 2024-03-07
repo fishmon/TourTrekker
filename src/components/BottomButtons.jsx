@@ -1,5 +1,5 @@
 import React from 'react';
-import './BottomButtons.scss'
+import './BottomButtons.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

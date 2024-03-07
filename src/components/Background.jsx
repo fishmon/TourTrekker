@@ -14,8 +14,8 @@ const Background = ({ city }) => {
             params: {
               query: city || "nature", 
               client_id: "fLMtdfoAfkrFdsN3nmAra8NmQkOTRuguv6uikh0Ktfw",
-              w: 1920, 
-              h: 1080, 
+              // w: 1920, 
+              // h: 1080, 
             },
           }
         );

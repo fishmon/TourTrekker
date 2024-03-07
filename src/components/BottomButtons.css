@@ -20,6 +20,7 @@
 .bottom-btns {
   display: flex;
   justify-items: center;
+  font-size: 1rem;
 }
 
 .btn-search {
