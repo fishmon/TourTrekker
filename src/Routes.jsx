@@ -3,7 +3,7 @@ import LandingPage from "./components/landingPage";
 import Forecast from "./components/Forecast";
 import Info from "./components/Info";
 import Places from "./components/Places";
-import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 const AppRoutes = ({ city }) => {
   // Component to manage routing
@@ -20,8 +20,8 @@ const AppRoutes = ({ city }) => {
           {/* Route for forecast page, passing city prop to Forecast */}
           <Route path="/forecast" element={<Forecast city={city} />} />
 
-          {/* Route for places page */}
-          <Route path="/Places" element={<Places />} />
+          {/* Route for places page, passing city prop to Places */}
+          <Route path="/places" element={<Places city={city} />} />
         </Routes>
       </Router>
     </div>
@@ -29,3 +29,4 @@ const AppRoutes = ({ city }) => {
 };
 
 export default AppRoutes;
+
