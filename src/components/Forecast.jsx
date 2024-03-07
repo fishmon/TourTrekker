@@ -3,6 +3,18 @@ import ForecastLogic from './ForecastLogic';
 import BottomButtons from './BottomButtons';
 import './Forecast.scss';
 
+function formatDate(timestamp) {
+  const date = new Date(timestamp * 1000); // Convert from Unix timestamp to milliseconds
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  return date.toLocaleDateString('en-US', options);
+}
+
+
+
+function Forecast({ city }) {
+  const { currentWeather, forecastWeather, backgroundImageUrl } = ForecastLogic({ city });
+
+
 
 function Forecast({ city }) {
   const { currentWeather, forecastWeather, formatDate } = ForecastLogic({ city });
