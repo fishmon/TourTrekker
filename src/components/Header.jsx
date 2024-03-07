@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import './Header.css';
+import logo from '/assets/logo.svg';
+import './Header.scss';
 const Header = ({ onSearch }) => {
   // State variable to manage the input value
   const [city, setCity] = useState('');
-
   // Function to handle search button click
   const handleSearch = () => {
     // Check if the input value is not empty
@@ -14,7 +14,6 @@ const Header = ({ onSearch }) => {
       setCity('');
     }
   };
-
   // Function to handle key press event
   const handleKeyPress = (e) => {
     // Check if the key pressed is Enter
@@ -23,22 +22,36 @@ const Header = ({ onSearch }) => {
       handleSearch();
     }
   };
-
   return (
-      <nav className="navbar navbar-expand-lg w-100 top-0 z-1">
+    <header className="p-2 header-nav">
+      <nav className="navbar navbar-expand-lg">
   <div className="container-fluid">
-    <a className="navbar-brand " href="#">TourTrekker</a>
-    <div className="collapse navbar-collapse justify-content-center me-5" id="navbarSupportedContent">
-    <div className="d-flex">
-        <input className="form-control me-2 " type="text" placeholder="Search" aria-label="Search"value={city}
+    <img src={logo} alt="Logo" className="mr-3 logo" />
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+      <div className="d-flex" role="search">
+        <input className="form-control me-4" type="text" placeholder="Search" aria-label="Search" value={city}
               onChange={(e) => setCity(e.target.value)}
-              onKeyPress={handleKeyPress}/>
-        <button className="btn search-button" onClick={handleSearch}>Search</button>
+              onKeyPress={handleKeyPress} // Added event listener for key press 
+              />
+        <button className="btn search-button" type="submit" onClick={handleSearch}>Search</button>
       </div>
     </div>
   </div>
 </nav>
+    </header>
   );
 };
-
 export default Header;
+
+
+
+
+
+
+
+
+
+
