@@ -1,13 +1,15 @@
-// ForecastLogic.js
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-function ForecastLogic({ city }) {
+const ForecastLogic = ({ city }) => {
   const [currentWeather, setCurrentWeather] = useState(null);
   const [forecastWeather, setForecastWeather] = useState([]);
+  const [backgroundImageUrl, setBackgroundImageUrl] = useState('');
 
   useEffect(() => {
     if (city) {
       getWeatherData(city);
+      fetchBackgroundImage(city);
     }
   }, [city]);
 
@@ -41,14 +43,32 @@ function ForecastLogic({ city }) {
     }
   };
 
-  // Function to format date in "MMMM d, yyyy" format
+  const fetchBackgroundImage = async (city) => {
+    try {
+      const response = await axios.get(
+        "https://api.unsplash.com/photos/random",
+        {
+          params: {
+            query: city || "nature",
+            client_id: "fLMtdfoAfkrFdsN3nmAra8NmQkOTRuguv6uikh0Ktfw",
+            w: 1920,
+            h: 1080,
+          },
+        }
+      );
+      setBackgroundImageUrl(response.data.urls.regular);
+    } catch (error) {
+      console.error("Error fetching image:", error);
+    }
+  };
+
   const formatDate = (timestamp) => {
     const date = new Date(timestamp * 1000);
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     return date.toLocaleDateString('en-US', options);
   };
 
-  return { currentWeather, forecastWeather, getWeatherData, formatDate };
-}
+  return { currentWeather, forecastWeather, backgroundImageUrl, getWeatherData, formatDate };
+};
 
 export default ForecastLogic;

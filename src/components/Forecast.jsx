@@ -4,10 +4,19 @@ import ForecastLogic from './ForecastLogic';
 import BottomButtons from './BottomButtons';
 
 function Forecast({ city }) {
-  const { currentWeather, forecastWeather, getWeatherData, formatDate } = ForecastLogic({ city });
+  const { currentWeather, forecastWeather, getWeatherData, formatDate, backgroundImageUrl } = ForecastLogic({ city });
+
+  const weatherContainerStyle = {
+    backgroundImage: `url(${backgroundImageUrl})`, // Apply the background image dynamically
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    minHeight: '100vh', // Adjust as needed
+    padding: '20px', // Adjust as needed
+  };
 
   return (
-    <div className="weather-app">
+    <div className="weather-app" style={weatherContainerStyle}>
       <div className="row">
         <div className="col-md-12 mb-3">
           {currentWeather && (
