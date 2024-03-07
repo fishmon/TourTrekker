@@ -57,10 +57,10 @@ To run TourTrekker Weather App locally on your machine, follow these steps:
 - Use the navigation bar at the bottom to switch between pages.
 
 ## Screenshots
-[Add screenshots here]
+![Screenshot of the program](image.png)
 
 ## Live Deployment
-You can access the live deployment of TourTrekker Weather App [here](#).
+You can access the live deployment of TourTrekker Weather App: [https://tourtrekkerapp.netlify.app/](#).
 
 ## Repository
 The source code for TourTrekker Weather App is available on GitHub:
