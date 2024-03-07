@@ -1,5 +1,5 @@
-.navbar {
-  background-color: rgba(121, 85, 68, 0.9);
+.header-nav {
+  background-color: rgb(121, 85, 68);
   /* min-height: 7em; */
 }
 
@@ -9,10 +9,19 @@
 }
 
 .search-button {
-  background-color: #E7BFA4 !important;
+  background-color: #FED007 !important;
   min-width: 7em !important;
+  min-height: 3em;
 }
 
 .navbar-brand {
   font-size: 2rem !important;
+}
+
+.logo {
+  max-width: 200px;
+}
+
+.container-fluid {
+  gap: 5em;
 }/*# sourceMappingURL=Header.css.map */

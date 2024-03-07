@@ -2,9 +2,8 @@
   position: absolute;
   padding: 2em 3em;
   text-align: center;
-  left: 50%;
+  left: 5%;
   top: 30%;
-  transform: translateX(-50%);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   background-color: rgba(255, 255, 255, 0.9);
   color: #461D1A !important;
@@ -12,10 +11,10 @@
 
 .welcome-box h2 {
   color: #461D1A !important;
+  font-size: 4rem !important;
 }
 
 .search-input {
   width: 80%;
   margin: 0 auto;
-}
-/*# sourceMappingURL=landingPage.css.map */
+}/*# sourceMappingURL=landingPage.css.map */
