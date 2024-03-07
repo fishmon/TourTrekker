@@ -8,7 +8,7 @@ const LandingPage = () => {
   // Function to handle navigation to the info page
   const handleNavigateToInfo = () => {
     // Navigate to the info page when the user clicks a button
-    navigate('/places');
+    navigate('/info');
   };
 
   return (
