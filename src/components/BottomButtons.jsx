@@ -12,13 +12,13 @@ const BottomButtons = () => {
         <div className="row">
 
           <div className="col-md-4 col-sm-12 bottom-btns">
-            <Link to="/places" className="btn btn-bottom btn-block"><FontAwesomeIcon icon={faBookAtlas} /> Info</Link>
+            <Link to="/home" className="btn btn-bottom btn-block"><FontAwesomeIcon icon={faBookAtlas} /> Home</Link>
           </div>
           <div className="col-md-4 col-sm-12 bottom-btns">
             <Link to="/forecast" className="btn btn-bottom btn-block"><FontAwesomeIcon icon={faCloudSunRain} /> Weather</Link>
           </div>
           <div className="col-md-4 col-sm-12 bottom-btns">
-            <Link to="/info" className="btn btn-bottom btn-block"><FontAwesomeIcon icon={faMapLocationDot} /> Touristic places</Link>
+            <Link to="/info" className="btn btn-bottom btn-block"><FontAwesomeIcon icon={faMapLocationDot} /> Info</Link>
           </div>
          
         </div>

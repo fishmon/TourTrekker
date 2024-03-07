@@ -1,0 +1,12 @@
+.read-more {
+  display: flex;
+  max-width: 5em;
+  justify-content: center;
+  align-items: center;
+  align-self: end;
+}
+
+.info-title {
+  font-size: 4rem;
+  text-align: center;
+}/*# sourceMappingURL=Info.css.map */
