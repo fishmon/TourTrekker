@@ -9,15 +9,8 @@ function formatDate(timestamp) {
   return date.toLocaleDateString('en-US', options);
 }
 
-
-
-export default function Forecast({ city }) {
-  const { currentWeather, forecastWeather, backgroundImageUrl } = ForecastLogic({ city });
-
-
-
 function Forecast({ city }) {
-  const { currentWeather, forecastWeather, formatDate } = ForecastLogic({ city });
+  const { currentWeather, forecastWeather, getWeatherData, formatDate } = ForecastLogic({ city });
 
   return (
     <div className="weather-app overflow-hidden">
@@ -63,3 +56,4 @@ function Forecast({ city }) {
     </div>
   );
 }
+export default Forecast;
