@@ -6,11 +6,11 @@
     border-radius: 5px;
     font-size: 1.5em;
     color: white;
-    background: rgb(255, 0, 0);
+    background: #846555;
     transition: box-shadow 0.4s ease;
   }
   .btn-bottom:hover {
-    background: rgb(255, 0, 0);
+    background: #846555;
     box-shadow: 5px 5px rgb(255, 208, 0);
     cursor: pointer;
     color: white;
@@ -23,7 +23,7 @@
   
   .btn-search {
     background: rgb(255, 208, 0);
-    color: black;
+    color: white;
   }
   .btn-search:hover {
     background: rgb(255, 208, 0);

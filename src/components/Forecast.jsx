@@ -11,7 +11,7 @@ function formatDate(timestamp) {
 
 
 
-function Forecast({ city }) {
+export default function Forecast({ city }) {
   const { currentWeather, forecastWeather, backgroundImageUrl } = ForecastLogic({ city });
 
 
@@ -20,7 +20,7 @@ function Forecast({ city }) {
   const { currentWeather, forecastWeather, formatDate } = ForecastLogic({ city });
 
   return (
-    <div className="weather-app">
+    <div className="weather-app overflow-hidden">
   
       {/* Current weather card */}
       <div className="row mt-5">
@@ -38,6 +38,7 @@ function Forecast({ city }) {
               </div>
             </div>
           )}
+          
         </div>
       </div>
 
@@ -62,5 +63,3 @@ function Forecast({ city }) {
     </div>
   );
 }
-
-export default Forecast;
