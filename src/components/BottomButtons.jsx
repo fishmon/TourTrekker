@@ -1,5 +1,5 @@
 import React from 'react';
-import '../components/buttons.css'
+import './BottomButtons.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -7,7 +7,7 @@ import { faBookAtlas, faCloudSunRain, faMapLocationDot } from '@fortawesome/free
 
 const BottomButtons = () => {
   return (
-    <div className="fixed-bottom bg-light p-3">
+    <div className="fixed-bottom p-3">
       <div className="container">
         <div className="row">
 

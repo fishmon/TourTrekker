@@ -1,0 +1,35 @@
+.btn-bottom {
+  width: 80%;
+  margin: 14px auto;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.5em;
+  color: white;
+  background: #846555;
+  transition: box-shadow 0.4s ease;
+}
+
+.btn-bottom:hover {
+  background: #846555;
+  box-shadow: 5px 5px rgb(255, 208, 0);
+  cursor: pointer;
+  color: white;
+}
+
+.bottom-btns {
+  display: flex;
+  justify-items: center;
+  font-size: 1rem;
+}
+
+.btn-search {
+  background: rgb(255, 208, 0);
+  color: white;
+}
+
+.btn-search:hover {
+  background: rgb(255, 208, 0);
+  box-shadow: 5px 5px black;
+  cursor: pointer;
+} /*# sourceMappingURL=BottomButtons.css.map */

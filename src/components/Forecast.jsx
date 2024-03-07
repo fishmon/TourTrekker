@@ -1,77 +1,62 @@
+// Forecast.js
 import React from 'react';
 import ForecastLogic from './ForecastLogic';
 import BottomButtons from './BottomButtons';
-
-function formatDate(timestamp) {
-  const date = new Date(timestamp * 1000); // Convert from Unix timestamp to milliseconds
-  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-  return date.toLocaleDateString('en-US', options);
-}
-
+import './Forecast.css'
 
 function Forecast({ city }) {
-  const { currentWeather, forecastWeather, backgroundImageUrl } = ForecastLogic({ city });
+  const { currentWeather, forecastWeather, getWeatherData, formatDate, backgroundImageUrl } = ForecastLogic({ city });
 
-  // Inline styles to set background image dynamically
-  const backgroundStyle = {
-    backgroundImage: `url(${backgroundImageUrl})`,
+  const weatherContainerStyle = {
+    backgroundImage: `url(${backgroundImageUrl})`, // Apply the background image dynamically
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    minHeight: '100vh',
-  };
-
-  // Style for the container that covers the entire viewport
-  const containerStyle = {
-    display: 'flex',
-    flexDirection: 'column',
-    minHeight: '100vh',
+    minHeight: '100vh', // Adjust as needed
   };
 
   return (
-    <div className="weather-app" style={containerStyle}>
-      {/* Background with background image */}
-      <div style={backgroundStyle}>
-        {/* Current weather card */}
-        <div className="row">
-          <div className="col-md-12 mb-3">
-            {currentWeather && (
-              <div className="card glass">
-                <div className="card-body">
-                  <h5 className="card-title">{currentWeather.name}</h5>
-                  <p className="card-text">Temperature: {currentWeather.main.temp} °C</p>
-                  <p className="card-text">Humidity: {currentWeather.main.humidity}%</p>
-                  <p className="card-text">Wind Speed: {currentWeather.wind.speed} m/s</p>
-                  <p className="card-text">UV Index: N/A</p>
+    <div className="weather-app overflow-hidden no-scroll" style={weatherContainerStyle}>
+  
+      {/* Current weather card */}
+      <div className="row mt-5">
+        <div className="col-md-10 mb-3 m-auto"> {/* Full width for the current weather card */}
+          {currentWeather && (
+            <div className="card"> {/* Apply glass effect */}
+              <div className="card-body">
+                <h2 className="card-title text-center">{currentWeather.name}</h2>
+                <div className="row">
+                <div className="card-text col-md-3 text-center">Temperature: {currentWeather.main.temp} °C</div>
+                <div className="card-text col-md-3 text-center">Humidity: {currentWeather.main.humidity}%</div>
+                <div className="card-text col-md-3 text-center">Wind Speed: {currentWeather.wind.speed} m/s</div>
+                <div className="card-text col-md-3 text-center">UV Index: N/A</div>
                 </div>
               </div>
-            )}
-          </div>
-        </div>
-
-        {/* Forecast cards */}
-        <div className="row">
-          {forecastWeather.length > 0 && (
-            forecastWeather.map((entry, index) => (
-              <div className="col-md-2 mb-3" key={index}>
-                <div className="card glass">
-                  <div className="card-body">
-                    <h5 className="card-title">Date: {formatDate(entry.dt)}</h5>
-                    <p className="card-text">Temperature: {entry.main.temp} °C</p>
-                    <p className="card-text">Humidity: {entry.main.humidity}%</p>
-                    <p className="card-text">Wind Speed: {entry.wind.speed} m/s</p>
-                  </div>
-                </div>
-              </div>
-            ))
+            </div>
           )}
+          
         </div>
       </div>
 
-      {/* Bottom buttons */}
+      {/* Forecast cards */}
+      <div className="row justify-content-center">
+        {forecastWeather.length > 0 && (
+          forecastWeather.map((entry, index) => (
+            <div className="col-md-2 mb-3" key={index}> {/* Set column width to 2 (15% of 12-column grid) */}
+              <div className="card"> {/* Apply glass effect */}
+                <div className="card-body">
+                  <h5 className="card-title text-center"><b>{formatDate(entry.dt)}</b></h5>
+                  <p className="card-text">Temperature: {entry.main.temp} °C</p>
+                  <p className="card-text">Humidity: {entry.main.humidity}%</p>
+                  <p className="card-text">Wind Speed: {entry.wind.speed} m/s</p>
+                </div>
+              </div>
+            </div>
+          ))
+        )}
+      </div>
       <BottomButtons />
     </div>
   );
 }
-
 export default Forecast;
